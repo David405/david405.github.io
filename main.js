@@ -13,7 +13,7 @@ const videoContainer = document.getElementById('video-container');
 const defaultChannel = 'techguyweb';
 
 // Load auth2 library
-function handleClient() {
+function handleClientLoad() {
     gapi.load('client:auth2', initClient);
 }
 
