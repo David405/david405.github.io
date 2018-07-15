@@ -6,9 +6,9 @@ const SCOPES = 'https://www.googleapis.com/auth/youtube.readonly';
 const authorizeButton = document.getElementById('authorize-button');
 const signoutButton = document.getElementById('signout-button');
 const content = document.getElementById('content');
-const content = document.getElementById('channel-form');
-const content = document.getElementById('channel-input');
-const content = document.getElementById('video-container');
+const channelForm = document.getElementById('channel-form');
+const channelInput = document.getElementById('channel-input');
+const videoContainer = document.getElementById('video-container');
 
 const defaultChannel = 'techguyweb';
 
@@ -26,7 +26,7 @@ function initClient() {
     }).then(() => {
         //listen for sign in state changes
         gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-        // Handle intial sign in state 
+        // Handle intial sign in state
         updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
         authorizeButton.onclick = handleAuthClick;
         signoutButton.onclick = handleSignoutClick;
@@ -49,7 +49,7 @@ function updateSigninStatus(isSignedIn) {
     }
 }
 
-// Handle login 
+// Handle login
 function handleAuthClick() {
     gapi.auth2.getAuthInstance().signIn();
 }
